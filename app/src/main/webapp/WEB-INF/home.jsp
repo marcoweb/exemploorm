@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -6,7 +7,14 @@
         <title>Home</title>
     </head>
     <body>
-        <h1>Olá Spring!!!</h1>
+        <form action="/insert">
+            <input type="text" name="texto" />
+            <button type="submit">Salvar</button>
+        </form>
+        <h1>Tarefas</h1>
+        <c:forEach var="t" items="${tarefas}">
+            ${t.descricao} <br />
+        </c:forEach>
     </body>
 </html>
 
